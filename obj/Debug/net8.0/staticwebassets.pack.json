@@ -9,16 +9,16 @@
       "PackagePath": "staticwebassets\\Images\\marks.png"
     },
     {
-      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapno locate.png",
-      "PackagePath": "staticwebassets\\Images\\swapno locate.png"
-    },
-    {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapno.png",
       "PackagePath": "staticwebassets\\Images\\swapno.png"
     },
     {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapnofooter.png",
       "PackagePath": "staticwebassets\\Images\\swapnofooter.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapnolocate.png",
+      "PackagePath": "staticwebassets\\Images\\swapnolocate.png"
     },
     {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\index.css",

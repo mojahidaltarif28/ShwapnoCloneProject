@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uROdM+4JzH+/HCttZ4WdyZfbIUwQoUP/b0QsyY9KdCM=",
+  "Hash": "f+pMDU+lHhkko+eoYhy+lDhGjhoYr++UHqNNFqyCSdg=",
   "Source": "OnlineShop",
   "BasePath": "_content/OnlineShop",
   "Mode": "Default",
@@ -112,25 +112,6 @@
       "OriginalItemSpec": "wwwroot\\Images\\marks.png"
     },
     {
-      "Identity": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapno locate.png",
-      "SourceId": "OnlineShop",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\",
-      "BasePath": "_content/OnlineShop",
-      "RelativePath": "Images/swapno locate.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Images\\swapno locate.png"
-    },
-    {
       "Identity": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapno.png",
       "SourceId": "OnlineShop",
       "SourceType": "Discovered",
@@ -167,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\swapnofooter.png"
+    },
+    {
+      "Identity": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\swapnolocate.png",
+      "SourceId": "OnlineShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\",
+      "BasePath": "_content/OnlineShop",
+      "RelativePath": "Images/swapnolocate.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\swapnolocate.png"
     },
     {
       "Identity": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\js\\index.js",

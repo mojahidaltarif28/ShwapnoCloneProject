@@ -1,28 +1,33 @@
 
 window.onload = function () {
-Hotbuys();
-Recommended();
-Culinary();
+    Hotbuys();
+    Recommended();
+    Culinary();
 };
 //  Hot Buys, Low Prices! 
-function Hotbuys(){
+function Hotbuys() {
     const container = document.querySelector('#hblp-elements');
     const elements = document.querySelectorAll('#hblp-element');
     const NextBtn = document.querySelector("#hnlpNext");
     const PrevBtn = document.querySelector("#hnlpPrev");
     let current_page = 0;
     let end_page = elements.length - 5;
-    const elementWidth = container.offsetWidth / elements.length; // Get the width of a single element + margin
-    console.log(elementWidth + " " + elements.length + "wlwments :" + container.offsetWidth);
+    console.log(elements.length);
+    const elementWidth = container.offsetWidth / elements.length;
     function showPage(page) {
-        const offset = page * elementWidth; // Calculate the offset for this page
-        container.style.transform = `translateX(-${offset}px)`; // Move the container to the left
-        container.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition effect
-        console.log(offset + "c:" + page + "e:" + end_page);
-        if (page >= end_page || end_page <= 0) {
+        const offset = page * elementWidth;
+        container.style.transform = `translateX(-${offset}px)`;
+        container.style.transition = 'transform 0.5s ease-in-out';
+        if (elements.length <= 5) {
+
+            PrevBtn.style.display = 'none';
+            NextBtn.style.display = 'none';
+        }
+        else if (page >= end_page || end_page <= 0) {
             NextBtn.style.display = 'none'
             PrevBtn.style.display = 'block';
         }
+
         else if (page == 0) {
             PrevBtn.style.display = 'none';
             NextBtn.style.display = 'block';
@@ -58,21 +63,24 @@ function Hotbuys(){
 }
 // Recommended
 
-function Recommended(){
+function Recommended() {
     const container = document.querySelector('#rfu-elements');
     const elements = document.querySelectorAll('#rfu-element');
     const NextBtn = document.querySelector("#rfuNext");
     const PrevBtn = document.querySelector("#rfuPrev");
     let current_page = 0;
     let end_page = elements.length - 5;
-    const elementWidth = container.offsetWidth / elements.length; // Get the width of a single element + margin
-    console.log(elementWidth + " " + elements.length + "wlwments :" + container.offsetWidth);
+    const elementWidth = container.offsetWidth / elements.length;
     function showPage(page) {
-        const offset = page * elementWidth; // Calculate the offset for this page
-        container.style.transform = `translateX(-${offset}px)`; // Move the container to the left
-        container.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition effect
-        console.log(offset + "c:" + page + "e:" + end_page);
-        if (page >= end_page || end_page <= 0) {
+        const offset = page * elementWidth;
+        container.style.transform = `translateX(-${offset}px)`;
+        container.style.transition = 'transform 0.5s ease-in-out';
+        if (elements.length <= 5) {
+
+            PrevBtn.style.display = 'none';
+            NextBtn.style.display = 'none';
+        }
+        else if (page >= end_page || end_page <= 0) {
             NextBtn.style.display = 'none'
             PrevBtn.style.display = 'block';
         }
@@ -112,23 +120,30 @@ function Recommended(){
 
 // Culinary Corner
 
-function Culinary(){
+function Culinary() {
     const container = document.querySelector('#ccelements');
     const elements = document.querySelectorAll('#ccelement');
     const NextBtn = document.querySelector("#ccNext");
     const PrevBtn = document.querySelector("#ccPrev");
     let current_page = 0;
     let end_page = elements.length - 5;
-    const elementWidth = container.offsetWidth / elements.length; // Get the width of a single element + margin
-    console.log(elementWidth + " " + elements.length + "wlwments :" + container.offsetWidth);
+    const elementWidth = container.offsetWidth / elements.length;
     function showPage(page) {
-        const offset = page * elementWidth; // Calculate the offset for this page
-        container.style.transform = `translateX(-${offset}px)`; // Move the container to the left
-        container.style.transition = 'transform 0.5s ease-in-out'; // Smooth transition effect
-        console.log(offset + "c:" + page + "e:" + end_page);
-        if (page >= end_page || end_page <= 0) {
+        const offset = page * elementWidth;
+        container.style.transform = `translateX(-${offset}px)`;
+        container.style.transition = 'transform 0.5s ease-in-out';
+        if (elements.length <= 5) {
+
+            PrevBtn.style.display = 'none';
+            NextBtn.style.display = 'none';
+        }
+        else if (page >= end_page || end_page <= 0) {
             NextBtn.style.display = 'none'
             PrevBtn.style.display = 'block';
+        }
+        else if (elements.length < 5) {
+            NextBtn.style.display = 'none';
+            PrevBtn.style.display = 'none';
         }
         else if (page == 0) {
             PrevBtn.style.display = 'none';
