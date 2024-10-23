@@ -1,0 +1,143 @@
+.index-img {
+    background-image: url("/Images/swapno.png");
+    height: 280px;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+
+.hot-buys {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    margin-top: 40px;
+   
+}
+.Culinary{
+    margin-bottom: 30px;
+}
+
+.hbh {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.hblp {
+    width: 93%;
+    height: 350px;
+    display: flex;
+    margin-left: 40px;
+    align-items: center;
+   
+   
+
+}
+.hblp-container{
+    width: 100%; 
+    overflow: hidden; 
+    position: relative;
+}
+.hblp-elements{
+    display: flex; 
+    transition: transform 0.5s ease-in-out; 
+    position: relative;
+    width: fit-content;
+    gap: 10px;
+    
+   
+}
+.hnlp-b{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.hnlp-btn{
+    font-size: 1.3rem;
+    background-color: #FFD814;
+    border: none;
+    padding: 3px 4px 2px 3px;
+    cursor: pointer;
+}
+.hblp-element{
+    height: 345px;
+    width: 220px;
+    border: 1px solid rgba(203, 200, 200, 0.699);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   justify-content: flex-start;
+  
+}
+.delv{
+    font-size: 1rem;
+    color: rgba(23, 23, 23, 0.774);
+    font-style: italic;
+    margin-bottom: 0 !important;
+}
+.hblp-img{
+    margin-top: 8px;
+    background-image: url("/Images/marks.png");
+    width: 200px;
+    height: 140px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.hblp-name{
+    margin:6px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.hblp-prices{
+    display: flex;
+    color: rgb(223,0,0);
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.hblp-amt{
+    border: none;
+    width:fit-content ;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    outline: none;   
+}
+.hblp-unit{
+    font-size: 1rem;
+    color: rgba(23, 23, 23, 0.774);
+    font-style: italic;
+    font-weight: 500;
+    margin-left: 6px;
+}
+.check-out-btn{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    background-color: rgb(223,0,0);
+    border-radius: 15px;
+    padding: 4px 15px 4px 15px;
+    width: 70%;
+    cursor: pointer;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+.check-out-btn i{
+    margin-right: 5px;
+}
+.break-img{
+    height: 120px;
+    width: 98%;
+    margin: 30px 15px 0 15px;
+    background-repeat: repeat;
+    background-size: contain;
+    background-image: url("https://d2t8nl1y0ie1km.cloudfront.net/images/thumbs/664acd7f69554c8e502d2846_WhatsApp%20Image%202024-05-20%20at%2010.09.18_1552.webp");
+}
