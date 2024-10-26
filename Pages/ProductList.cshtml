@@ -1,0 +1,28 @@
+@page
+@model OnlineShop.Pages.ProductList
+@{
+    ViewData["Title"] = "ProductList";
+}
+
+
+<div>
+    <div class="search-box-admin">
+        <form class="product-form" action="">
+             <select  id="category" class="item-box search-category-admin" >
+                      <option value="">Select Category</option>
+                    <option value="Fruits">Fruits & Vegetables</option>
+                    <option value="Meat">Meat & Fish</option>
+                    <option value="Drinks">Drinks</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Candy">Candy & Chocolate</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Sauces">Sauces & Pickles</option>
+                    <option value="Cooking">Cooking</option>
+                </select>
+                <div class="search-div-admin">
+                <input type="text" class="search-bar-admin" placeholder="Search Product">
+                <div class="search-btn admin-search-btn"><i class="bi bi-search"></i></div>
+                </div>
+        </form>
+    </div>
+</div>

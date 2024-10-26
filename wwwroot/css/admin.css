@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    border: 2px solid brown;
+
 }
 .Add-Item form{
-    height: 75vh;
+    height: 80vh;
     width: 40vw;
     margin-top: 30px;
     margin-bottom: 30px;
