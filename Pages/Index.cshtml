@@ -14,22 +14,24 @@
             </div>
             <div class="hblp-container">
                 <div class="hblp-elements" id="hblp-elements">
-                    @foreach(var Fruit in Model.FruitList)
+                    @foreach (var Fruit in Model.FruitList)
                     {
-                    <div class="hblp-element" id="hblp-element">
-                        <div class="hblp-img" style="background-image: url('data:image/png;base64,@Convert.ToBase64String(Fruit.image)');"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">@Fruit.productName</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">@Fruit.price</p>
-                            <p class="hblp-unit">@Fruit.unit</p>
+                        <div class="hblp-element" id="hblp-element">
+                            <div class="hblp-img"
+                                style="background-image: url('data:image/png;base64,@Convert.ToBase64String(Fruit.image)');">
+                            </div>
+                            <p class="delv">Delivery 1-2 hours</p>
+                            <div class="hblp-name">@Fruit.productName</div>
+                            <div class="hblp-prices">
+                                <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@Fruit.price</p>
+                                <p class="hblp-unit">@Fruit.unit</p>
+                            </div>
+                            <a class="check-out-btn">
+                                <i class="fa-solid fa-plus"></i> Add to Bag
+                            </a>
                         </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bag
-                        </a>
-                    </div>
                     }
-                   
+
                 </div>
             </div>
             <div class="hnlp-b">
@@ -47,81 +49,25 @@
             <div class="hnlp-b">
                 <button class="hnlp-btn" id="rfuPrev"><i class="fa-solid fa-chevron-left"></i></button>
             </div>
-            <div class="hblp-container" >
+            <div class="hblp-container">
                 <div class="hblp-elements" id="rfu-elements">
-
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
+                    @foreach (var Food in Model.RecommandList)
+                    {
+                        <div class="hblp-element" id="rfu-element">
+                            <div class="hblp-img"
+                                style="background-image: url('data:image/png;base64,@Convert.ToBase64String(Food.image)');">
+                            </div>
+                            <p class="delv">Delivery 1-2 hours</p>
+                            <div class="hblp-name">@Food.productName</div>
+                            <div class="hblp-prices">
+                                <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@Food.price</p>
+                                <p class="hblp-unit">@Food.unit</p>
+                            </div>
+                            <a class="check-out-btn">
+                                <i class="fa-solid fa-plus"></i> Add to Bad
+                            </a>
                         </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="rfu-element">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
+                    }
 
                 </div>
             </div>
@@ -141,95 +87,26 @@
             <div class="hblp-container">
                 <div class="hblp-elements" id="ccelements">
 
-
-                    <div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
+                    @foreach (var Food in Model.Culninary)
+                    {
+                        <div class="hblp-element" id="ccelement">
+                            <div class="hblp-img" style="background-image: url('data:image/png;base64,@Convert.ToBase64String(Food.image)');"></div>
+                            <p class=" delv">Delivery 1-2 hours</p>
+                                <div class="hblp-name">@Food.productName</div>
+                                <div class="hblp-prices">
+                                    &#2547 <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@Food.price</p>
+                                    <p class="hblp-unit">@Food.unit</p>
+                                </div>
+                                <a class="check-out-btn">
+                                    <i class="fa-solid fa-plus"></i> Add to Bad
+                                </a>
+                            </div>
+                        }
                     </div>
-                    <div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-                    <div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div><div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div><div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div><div class="hblp-element" id="ccelement">
-                        <div class="hblp-img"></div>
-                        <p class="delv">Delivery 1-2 hours</p>
-                        <div class="hblp-name">Marks Full Cream Milk powder 500gm</div>
-                        <div class="hblp-prices">
-                            &#2547 <p class="hblp-amt">349.50</p>
-                            <p class="hblp-unit">Per Piece</p>
-                        </div>
-                        <a class="check-out-btn">
-                            <i class="fa-solid fa-plus"></i> Add to Bad
-                        </a>
-                    </div>
-
                 </div>
-            </div>
-            <div class="hnlp-b">
-                <button class="hnlp-btn" id="ccNext"><i class="fa-solid fa-chevron-right"></i></button>
+                <div class="hnlp-b">
+                    <button class="hnlp-btn" id="ccNext"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
             </div>
         </div>
     </div>
-</div>
-

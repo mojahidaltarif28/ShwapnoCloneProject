@@ -6,11 +6,12 @@
 
 <div class="Admin-main">
     <div class="Add-Item">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <p>Add Item</p>
             <div class="item-category">
-                <label for="category">Category</label>
-                <select name="category" id="category" class="item-box">
+                <label class="ic-1" for="category">Category</label>
+                <select  id="category" class="item-box" asp-for="category">
+                      <option value="">Select Category</option>
                     <option value="Fruits">Fruits & Vegetables</option>
                     <option value="Meat">Meat & Fish</option>
                     <option value="Drinks">Drinks</option>
@@ -20,24 +21,29 @@
                     <option value="Sauces">Sauces & Pickles</option>
                     <option value="Cooking">Cooking</option>
                 </select>
+                <span asp-validation-for="category" class="text-danger text-sm"></span>
             </div>
             <div class="item-category">
                 <label for="productName">Product Name</label>
-                <textarea name="" id="productName" class="item-box" placeholder="Enter Product Name" rows="1"></textarea>
+                <textarea name="productName" id="productName" class="item-box" placeholder="Enter Product Name" rows="1" asp-for="productName"></textarea>
+                <span asp-validation-for="productName" class="text-danger text-sm"></span>
             </div>
             <div class="item-p-u">
                 <div class="item-category">
                     <label for="price">Price</label>
-                    <input type="number" name="" placeholder="Enter Price" class="item-box1" id="price">
+                    <input type="number" placeholder="Enter Price" class="item-box1" id="price" asp-for="price">
+                    <span asp-validation-for="price" class="text-danger text-sm"></span>
                 </div>
                 <div class="item-category">
                     <label for="unit">Unit</label>
-                    <input type="text" name="" placeholder="Enter Unit" class="item-box1" id="unit">
+                    <input type="text"  placeholder="Enter Unit" class="item-box1" id="unit" asp-for="unit">
+                    <span asp-validation-for="unit" class="text-danger text-sm"></span>
                 </div>
             </div>
-            <div class="item-category">
-                <label for="fileImage">Upload an image:</label>
-                <input type="file" id="fileImage" name="image" class="item-box" accept="image/*">
+            <div class="item-category ">
+                <label class="ic-1" for="fileImage">Upload an image:</label>
+                <input type="file" id="fileImage"  class="item-box" accept="image/*" asp-for="productImage">
+                <span asp-validation-for="productImage" class="text-danger text-sm"></span>
             </div>
             <button class="add-item-btn"><i class="fa-solid fa-plus"></i>Add Item</button>
         </form>
