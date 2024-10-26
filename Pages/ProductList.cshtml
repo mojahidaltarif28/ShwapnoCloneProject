@@ -5,24 +5,44 @@
 }
 
 
-<div>
+<div class="product-list">
     <div class="search-box-admin">
         <form class="product-form" action="">
-             <select  id="category" class="item-box search-category-admin" >
-                      <option value="">Select Category</option>
-                    <option value="Fruits">Fruits & Vegetables</option>
-                    <option value="Meat">Meat & Fish</option>
-                    <option value="Drinks">Drinks</option>
-                    <option value="Snacks">Snacks</option>
-                    <option value="Candy">Candy & Chocolate</option>
-                    <option value="Dairy">Dairy</option>
-                    <option value="Sauces">Sauces & Pickles</option>
-                    <option value="Cooking">Cooking</option>
-                </select>
-                <div class="search-div-admin">
+            <select id="category" class="item-box search-category-admin">
+                <option value="">Select Category</option>
+                <option value="Fruits">Fruits & Vegetables</option>
+                <option value="Meat">Meat & Fish</option>
+                <option value="Drinks">Drinks</option>
+                <option value="Snacks">Snacks</option>
+                <option value="Candy">Candy & Chocolate</option>
+                <option value="Dairy">Dairy</option>
+                <option value="Sauces">Sauces & Pickles</option>
+                <option value="Cooking">Cooking</option>
+            </select>
+            <div class="search-div-admin">
                 <input type="text" class="search-bar-admin" placeholder="Search Product">
                 <div class="search-btn admin-search-btn"><i class="bi bi-search"></i></div>
-                </div>
+            </div>
         </form>
+    </div>
+    <div class="view-product">
+        @foreach(var food in Model.foodlist)
+        {
+        <div class="hblp-element product-element" >
+            <div class="hblp-img"
+                style="background-image: url('data:image/png;base64,@Convert.ToBase64String(food.image)');"></div>
+            <p class=" delv">Delivery 1-2 hours</p>
+            <div class="hblp-name">@food.ProductName</div>
+            <div class="hblp-prices">
+                &#2547 <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@food.price</p>
+                <p class="hblp-unit">@food.unit</p>
+            </div>
+            <div class="p-btn">
+                <a class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i> Edit </a>
+                 <a class="btn btn-danger"> <i class="fa-solid fa-trash"></i> Delete </a>
+            </div>  
+        </div>
+        }
+        
     </div>
 </div>

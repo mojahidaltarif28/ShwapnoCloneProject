@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\Images\\swapnolocate.png"
     },
     {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\ProductList.css",
+      "PackagePath": "staticwebassets\\css\\ProductList.css"
+    },
+    {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\admin.css",
       "PackagePath": "staticwebassets\\css\\admin.css"
     },

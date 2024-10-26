@@ -1,12 +1,13 @@
-.Add-Item{
+.Add-Item {
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
 }
-.Add-Item form{
+
+.Add-Item form {
     height: 80vh;
-    width: 40vw;
+    width: 50vw;
     margin-top: 30px;
     margin-bottom: 30px;
     border: 1px solid rgba(128, 128, 128, 0.595);
@@ -17,80 +18,93 @@
     border-radius: 8px;
     overflow: auto;
 }
-.Add-Item form p{
+
+.Add-Item form p {
     width: 100%;
     text-align: center;
     font-size: 2.3rem;
     font-weight: 600;
-    color: rgb(223,0,0);
+    color: rgb(223, 0, 0);
     margin-bottom: 10px !important;
 }
-.item-category{
+
+.item-category {
     display: flex;
     flex-direction: column;
-    
+
 }
-.item-category span{
+
+.item-category span {
     margin-top: -3px;
     padding-left: 3px;
     height: 26px;
-   
- 
+
+
 }
-.item-category label{
+
+.item-category label {
     font-size: 1.2rem;
     height: 27px;
     margin-top: -10px;
     padding-left: 2px;
-    
-    
+
+
 }
-.item-box{
-    width: 24vw;
+
+.item-box {
+    width: 40vw;
+    padding: 8px 0 8px 0;
     padding: 2px 5px 2px 5px;
     font-size: 1.2rem;
     border-radius: 6px;
     border: 1px solid black;
 }
-.item-box1{
-    width: 11vw;
+
+.item-box1 {
+    width: 19.5vw;
     padding: 2px 5px 2px 5px;
     font-size: 1.2rem;
     border-radius: 6px;
-  
     border: 1px solid black;
 }
+
 .ic-1 {
     height: 30px !important;
 }
-.item-box:focus,.item-box1:focus{
+
+.item-box:focus,
+.item-box1:focus {
     outline: 3px solid rgb(152, 152, 152);
     border: 0;
     transition: all 0.05s linear;
 }
-#fileImage{
-    width: 24vw;
+
+#fileImage {
+    width: 40vw;
     border: 1px solid black;
     padding: 0;
     font-size: 1.1rem;
 }
-.item-p-u{ 
+
+.item-p-u {
     display: flex;
-   width: 24vw;
+    width: 40vw;
     justify-content: space-between;
-    
+
 }
-.add-item-btn{
+
+.add-item-btn {
     margin-top: 30px;
-    background-color: rgb(223,0,0);
-    padding: 6px;
-    font-size: 1.2;
+    background-color: rgb(223, 0, 0);
+    padding: 10px;
+    font-size: 1.3rem;
     border: none;
     border-radius: 8px;
     color: white;
-    width: 24vw;
+    width: 40vw;
 }
-#productName{
+
+#productName {
     max-height: 100px;
     overflow-y: auto;
     min-height: 35px;
