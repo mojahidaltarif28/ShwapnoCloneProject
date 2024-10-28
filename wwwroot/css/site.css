@@ -193,12 +193,7 @@ footer{
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: black;
-  font-size: 1.23rem;
-}
 
-.left-nav a:hover {
-  color: rgb(223, 0, 0);
 }
 
 .left-nav a img {
@@ -340,16 +335,23 @@ footer{
   border: 2px solid rgb(223, 0, 0);
   border-radius: 8px;
   color: red ;
-  padding: 4px 0 4px 4px !important;
+  padding: 4px 0 4px 4px ;
 }
 .admin1 i,.admin2 i{
-  margin-right: 6px !important;
-  margin-left: 10px !important;
+  margin-right: 6px ;
+  margin-left: 10px ;
 }
 .admin1{
-  margin-top: 6px !important;
+  margin-top: 6px ;
 }
 .admin1:hover,.admin2:hover{
-  background-color: rgb(223, 0, 0);
-  color: white;
+  background-color: rgb(223, 0, 0) ;
+  color: white ;
+}
+.user{
+  color: black;
+  font-size: 1.23rem;
+}
+.user:hover{
+  color: red;
 }

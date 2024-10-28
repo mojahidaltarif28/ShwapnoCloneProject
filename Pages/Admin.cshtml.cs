@@ -79,7 +79,7 @@ namespace OnlineShop.Pages
                 ErrorMessage = ex.Message;
                 return Page();
             }
-            return Redirect("/Admin");
+            return RedirectToPage("/Admin",new{admin_auth="mojahidaltarif78@gmail.com",product="add"});
         }
     }
 }

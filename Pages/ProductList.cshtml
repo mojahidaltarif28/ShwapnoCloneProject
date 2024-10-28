@@ -26,23 +26,67 @@
         </form>
     </div>
     <div class="view-product">
-        @foreach(var food in Model.foodlist)
+        @foreach (var food in Model.foodlist)
         {
-        <div class="hblp-element product-element" >
-            <div class="hblp-img"
-                style="background-image: url('data:image/png;base64,@Convert.ToBase64String(food.image)');"></div>
-            <p class=" delv">Delivery 1-2 hours</p>
-            <div class="hblp-name">@food.ProductName</div>
-            <div class="hblp-prices">
-                &#2547 <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@food.price</p>
-                <p class="hblp-unit">@food.unit</p>
+            <div class="hblp-element product-element">
+                <div class="hblp-img"
+                    style="background-image: url('data:image/png;base64,@Convert.ToBase64String(food.image)');">
+                </div>
+                <p class=" delv">Delivery 1-2 hours</p>
+                <div class="hblp-name">@food.ProductName</div>
+                <input type="text" class="id-dd" style="display: none;" value="@food.id">
+                <div class="hblp-prices">
+                    <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@food.price</p>
+                    <p class="hblp-unit">@food.unit</p>
+                </div>
+                <div class="p-btn">
+                    <a class="btn btn-primary" href="Update_Product?p_id=@food.id&product=@System.Net.WebUtility.UrlEncode(food.ProductName)&admin_auth=mojahidaltarif78@gmail.com"> <i class="fa-solid fa-pen-to-square"></i> Edit </a>
+                    <a class="btn btn-danger" id="productDelete"> <i class="fa-solid fa-trash"></i> Delete </a>
+                </div>
             </div>
-            <div class="p-btn">
-                <a class="btn btn-primary"> <i class="fa-solid fa-pen-to-square"></i> Edit </a>
-                 <a class="btn btn-danger"> <i class="fa-solid fa-trash"></i> Delete </a>
-            </div>  
-        </div>
         }
-        
+        <div class="delete-form">
+            <div class="mx-auto rounded  p-4"
+                style="width: 400px; border:3px solid rgba(214, 214, 214, 0.392);background-color:white">
+                <h2 class="text-center mb-3 text-danger">Delete Product</h2>
+                <hr>
+                <p>Are you sure you want to delete this product?</p>
+                <p class="text-center"><Strong class="product-name-delete"></Strong></p>
+                <hr>
+                <form method="post" class="col-sm-12 border-0" asp-page="/Delete_Product" enctype="multipart/form-data">
+                    <div class="row ">
+                        <div class="col-sm-6 d-grid">
+                            <a class="btn btn-success NO-btn">NO</a>
+                            <input type="hidden" id="Namedelete" name="productName" >
+                            <input type="hidden" id="Iddelete" name="productId">
+                        </div>
+                        <div class="col-sm-6 d-grid">
+                            <button type="submit" id="delete_btn" class="btn btn-danger">YES</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     </div>
+
 </div>
+<script>
+    document.querySelectorAll("#productDelete").forEach((btn) => {
+        btn.addEventListener('click', (evt) => {
+            document.querySelector('.delete-form').style.display = 'flex';
+            const element = evt.target.closest(".product-element");
+            const productName = element.querySelector('.hblp-name').innerText;
+            const productId = element.querySelector(".id-dd").value;
+            document.querySelector("#Namedelete").value = productName;
+            document.querySelector("#Iddelete").value = productId;
+            document.querySelector(".product-name-delete").innerText = `Product Name: ${productName}`;
+
+        })
+        document.querySelector(".NO-btn").addEventListener('click', () => {
+            document.querySelector('.delete-form').style.display = 'none';
+        })
+    })
+</script>

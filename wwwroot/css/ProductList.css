@@ -57,6 +57,8 @@
     justify-content: center;
     gap: 10px;
     align-items: center;
+    margin-top: auto;
+    margin-bottom: 10px;
 }
 .p-btn a{
     width: 38%;
@@ -80,4 +82,36 @@
     justify-content: center;
     align-content: flex-start;
     gap: 20px;
+}
+.delete-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+.btn-list-update{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+.blu-btn{
+    width: 38% !important;
+    background-color: green !important;
+}
+.blc-btn{
+    width: 38%;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(223,0,0) !important;
+}
+.blu-btn:hover,.blc-btn:hover{
+    opacity: 0.7 !important;
 }

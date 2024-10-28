@@ -10,8 +10,8 @@
             <p>Add Item</p>
             <div class="item-category">
                 <label class="ic-1" for="category">Category</label>
-                <select  id="category" class="item-box" asp-for="category">
-                      <option value="">Select Category</option>
+                <select id="category" class="item-box" asp-for="category">
+                    <option value="">Select Category</option>
                     <option value="Fruits">Fruits & Vegetables</option>
                     <option value="Meat">Meat & Fish</option>
                     <option value="Drinks">Drinks</option>
@@ -25,7 +25,8 @@
             </div>
             <div class="item-category">
                 <label for="productName">Product Name</label>
-                <textarea name="productName" id="productName" class="item-box" placeholder="Enter Product Name" rows="3" asp-for="productName"></textarea>
+                <textarea name="productName" id="productName" class="item-box" placeholder="Enter Product Name" rows="3"
+                    asp-for="productName"></textarea>
                 <span asp-validation-for="productName" class="text-danger text-sm"></span>
             </div>
             <div class="item-p-u">
@@ -36,13 +37,13 @@
                 </div>
                 <div class="item-category">
                     <label for="unit">Unit</label>
-                    <input type="text"  placeholder="Enter Unit" class="item-box1" id="unit" asp-for="unit">
+                    <input type="text" placeholder="Enter Unit" class="item-box1" id="unit" asp-for="unit">
                     <span asp-validation-for="unit" class="text-danger text-sm"></span>
                 </div>
             </div>
             <div class="item-category ">
                 <label class="ic-1" for="fileImage">Upload an image:</label>
-                <input type="file" id="fileImage"  class="item-box" accept="image/*" asp-for="productImage">
+                <input type="file" id="fileImage" class="item-box" accept="image/*" asp-for="productImage">
                 <span asp-validation-for="productImage" class="text-danger text-sm"></span>
             </div>
             <button class="add-item-btn"><i class="fa-solid fa-plus"></i>Add Item</button>

@@ -1,0 +1,48 @@
+@page
+@model OnlineShop.Pages.Update_Product
+@{
+    ViewData["Title"] = "Update_Product";
+}
+
+<div>
+    <div class="Add-Item">
+       
+        <form action="" method="post" enctype="multipart/form-data">
+      
+            <p>Update Product</p>
+            <input type="hidden" asp-for="tableNameH " >
+            <div class="item-category">
+                <label class="ic-1" for="category">Category</label>
+                <input type="text" id="category" class="item-box" asp-for="category" readonly />
+                <span asp-validation-for="category" class="text-danger text-sm"></span>
+            </div>
+            <div class="item-category">
+                <label for="productName">Product Name</label>
+                <textarea  id="productName" asp-for="ProductName" class="item-box" placeholder="Enter Product Name" rows="3"  ></textarea>
+                <span asp-validation-for="ProductName" class="text-danger text-sm"></span>
+            </div>
+            <div class="item-p-u">
+                <div class="item-category">
+                    <label for="price">Price</label>
+                    <input type="number" placeholder="Enter Price" class="item-box1" id="price" asp-for="price" >
+                    <span asp-validation-for="price" class="text-danger text-sm"></span>
+                </div>
+                <div class="item-category">
+                    <label for="unit">Unit</label>
+                    <input type="text" placeholder="Enter Unit" class="item-box1" id="unit" asp-for="unit" >
+                    <span asp-validation-for="unit" class="text-danger text-sm"></span>
+                </div>
+            </div>
+            <div class="item-category ">
+                <label class="ic-1" for="fileImage">Upload an image:</label>
+                <input type="file" id="fileImage" class="item-box" accept="image/*" asp-for="productImage" >
+            </div>
+            <div class="btn-list-update">
+                <a class="add-item-btn blc-btn" href="ProductList?admin_auth=mojahidaltarif78@gmail.com&product=list">Cancel</a>
+                <button class="add-item-btn blu-btn">Update</button>
+            </div>
+            
+        </form>
+        
+    </div>
+</div>

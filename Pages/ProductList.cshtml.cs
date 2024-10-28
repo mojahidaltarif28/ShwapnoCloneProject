@@ -28,7 +28,7 @@ namespace OnlineShop.Pages
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    Console.WriteLine("Connected");
+                    Console.WriteLine("Connected ProductList");
                     string sql = "select coalesce(Candy.productId,Cooking.productId,Dairy.productId,Drinks.productId,Fruits.productId,Meat.productId,Sauces.productId,Snacks.productId) as productId, coalesce(Candy.productName,Cooking.productName,Dairy.productName,"
                     + "Drinks.productName,Fruits.productName,Meat.productName,Sauces.productName,Snacks.productName) as productName, coalesce(Candy.price,Cooking.price,Dairy.price,Drinks.price,Fruits.price,Meat.price,Sauces.price,Snacks.price) as price,"
                     + "coalesce(Candy.unit,Cooking.unit,Dairy.unit,Drinks.unit,Fruits.unit,Meat.unit,Sauces.unit,Snacks.unit) as unit,coalesce(Candy.image,Cooking.image,Dairy.image,Drinks.image,Fruits.image,Meat.image,Sauces.image,Snacks.image) as image from Candy "
@@ -57,6 +57,11 @@ namespace OnlineShop.Pages
                         }
                     }                
                 }
+
+
+
+               
+
             }
             catch (Exception e)
             {

@@ -47,7 +47,7 @@
             </div>
             <div class="nav-element">
                 <div class="sign-up">
-                    <a asp-page="Admin" asp-route-admin-auth="mojahidaltarif78@gmail.com"><i
+                    <a asp-page="Admin" asp-route-admin_auth="mojahidaltarif78@gmail.com"><i
                             class="bi bi-person-fill"></i>Sign in / Sign up</a>
                 </div>
             </div>
@@ -88,9 +88,9 @@
                     Pickles</a>
                 <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
                         alt="">Cooking</a>
-                <a asp-page="Admin" class="admin1" asp-route-admin-auth="mojahidaltarif78@gmail.com"
+                <a asp-page="Admin" class="admin1" asp-route-admin_auth="mojahidaltarif78@gmail.com"
                     asp-route-product="add"><i class="fa-solid fa-plus"></i> Add Product</a>
-                <a asp-page="ProductList" class="admin2" asp-route-admin-auth="mojahidaltarif78@gmail.com"
+                <a asp-page="ProductList" class="admin2" asp-route-admin_auth="mojahidaltarif78@gmail.com"
                     asp-route-product="list"><i class="fa-solid fa-list"></i>Product List</a>
             </div>
             <div class="main-section">
@@ -198,22 +198,11 @@
 <script>
 
     const urls = new URLSearchParams(window.location.search);
-    const admin_auth = urls.get('admin-auth');
+    const admin_auth = urls.get('admin_auth');
     const product = urls.get('product');
 
-    if (admin_auth == null) {
-        document.querySelectorAll(".user").forEach((element) => {
 
-            element.style.display = 'block';
-        });
-        document.querySelectorAll(".admin").forEach(element => {
-            element.style.display = 'none';
-        });
-        document.querySelector(".search-bar").readOnly = false;
-        document.querySelector(".search-btn").disabled = false;
-
-    }
-    else {
+    if (admin_auth != null) {
         document.querySelectorAll(".user").forEach((element) => {
 
             element.style.display = 'none';
@@ -221,43 +210,38 @@
         document.querySelectorAll(".footer-up, .footer-main").forEach(element => {
             element.style.display = 'none';
         });
-        document.querySelectorAll(".admin").forEach(element => {
+        document.querySelectorAll(".admin1,.admin2").forEach(element => {
             element.style.display = 'block';
         });
-        document.querySelector(".search-bar").readOnly = true;
-        document.querySelector(".search-btn").disabled = true;
-        if (product == "add") {
-            document.querySelector(".admin1").style.backgroundColor = 'red';
-            document.querySelector(".admin1").style.color = 'white';
-            document.querySelector(".admin2").style.backgroundColor = 'white';
-            document.querySelector(".admin2").style.color = 'red';
-            @* document.querySelector(".admin2").addEventListener('mouseenter'()=> {
-                document.querySelector(".admin2").style.backgroundColor = 'red';
-                document.querySelector(".admin2").style.color = 'white';
-            });
-            document.querySelector(".admin2").addEventListener('mouseleave'()=> {
-                document.querySelector(".admin2").style.backgroundColor = 'white';
-                document.querySelector(".admin2").style.color = 'red';
-            }); *@
+
+         if (product==null||product == "add") {
+            document.querySelector('.admin1').style.backgroundColor = 'red';
+            document.querySelector('.admin1').style.color = 'white';
         }
         else {
-            document.querySelector(".admin1").style.backgroundColor = 'white';
-            document.querySelector(".admin1").style.color = 'red';
-            document.querySelector(".admin2").style.backgroundColor = 'red';
-            document.querySelector(".admin2").style.color = 'white';
-
-            @* document.querySelector(".admin2").addEventListener('mouseenter'()=> {
-                document.querySelector(".admin1").style.backgroundColor = 'red';
-                document.querySelector(".admin1").style.color = 'white';
-            });
-            document.querySelector(".admin2").addEventListener('mouseleave'()=> {
-                document.querySelector(".admin1").style.backgroundColor = 'white';
-                document.querySelector(".admin1").style.color = 'red';
-            }); *@
+            document.querySelector('.admin2').style.backgroundColor = 'red';
+            document.querySelector('.admin2').style.color = 'white';
         }
-
+        document.querySelector(".search-bar").readOnly = true;
+        document.querySelector(".search-btn").disabled = true;
 
     }
+    else {
+         console.log(admin_auth);
+        document.querySelectorAll(".user").forEach((element) => {
+
+            element.style.display = 'block';
+        });
+        document.querySelectorAll(".admin1, .admin2").forEach(element => {
+            element.style.display = 'none';
+        });
+        document.querySelector(".search-bar").readOnly = false;
+        document.querySelector(".search-btn").disabled = false;
+        product="add";
+    }
+    console.log(product);
+
+
 </script>
 
 </html>
