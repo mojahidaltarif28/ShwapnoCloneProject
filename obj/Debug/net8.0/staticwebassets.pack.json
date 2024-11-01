@@ -1,6 +1,38 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Chocolate.png",
+      "PackagePath": "staticwebassets\\Images\\Chocolate.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Cooking.png",
+      "PackagePath": "staticwebassets\\Images\\Cooking.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Dairy.png",
+      "PackagePath": "staticwebassets\\Images\\Dairy.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Drinks.png",
+      "PackagePath": "staticwebassets\\Images\\Drinks.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Meat.png",
+      "PackagePath": "staticwebassets\\Images\\Meat.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Pickles.png",
+      "PackagePath": "staticwebassets\\Images\\Pickles.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\Snacks.png",
+      "PackagePath": "staticwebassets\\Images\\Snacks.png"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\fruits.png",
+      "PackagePath": "staticwebassets\\Images\\fruits.png"
+    },
+    {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\Images\\logo.png",
       "PackagePath": "staticwebassets\\Images\\logo.png"
     },
@@ -27,6 +59,10 @@
     {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\admin.css",
       "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\food.css",
+      "PackagePath": "staticwebassets\\css\\food.css"
     },
     {
       "Id": "C:\\Users\\Windows 10\\Desktop\\OnlineShop\\wwwroot\\css\\index.css",

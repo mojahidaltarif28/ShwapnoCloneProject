@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav {
+  display: flex;
+  height: 70px;
+  background-color: rgb(223, 0, 0);
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+main {
+  margin-top: 100px;
+}
+footer{
+  position: relative;
+  bottom: 0;
+}
+.nav-logo {
+  background-image: url("/Images/logo.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: fit-content;
+  height: 50px;
+  width: 120px;
+}
+
+.nav-area {
+  border: 1px solid rgba(231, 231, 231, 0.675);
+  padding: 6px 5px 6px 4px;
+  border-radius: 4px;
+}
+
+.nav-area a {
+  text-decoration: none;
+  color: rgb(231, 231, 231);
+}
+
+.nav-area i {
+  margin-right: 2px;
+  font-size: 14px;
+}
+
+.download-app-img {
+  background-image: url("https://d2t8nl1y0ie1km.cloudfront.net/public/app-download.png");
+  width: 168px;
+  height: 38px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.language {
+  color: rgb(231, 231, 231);
+  border: 1px solid rgba(231, 231, 231, 0.675);
+  padding: 6px 15px 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  height: 38px;
+}
+
+.sign-up {
+  border: 1px solid rgba(231, 231, 231, 0.675);
+  padding: 6px 15px 6px 14px;
+  border-radius: 4px;
+}
+
+.sign-up a {
+  color: rgb(231, 231, 231);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sign-up a i {
+  margin-right: 4px;
+}
+
+.nav-search-box {
+  width: 40%;
+  height: 40px;
+  display: flex;
+  border-radius: 8px;
+
+}
+
+.search-bar {
+  outline: none;
+  width: 92%;
+  height: 38px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: 0;
+  padding: 0 6px 0 6px;
+}
+
+.search-btn {
+  width: 8%;
+  height: 38px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border: 0;
+  background-color: #FFD814;
+}
+
+.search-btn i {
+  font-size: 1.2rem;
+}
+
+.bottom-nav {
+  display: flex;
+  border-bottom: 1px solid rgba(203, 203, 203, 0.786);
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.left-bottom {
+  margin-left: 30px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.left-bottom i {
+  font-size: 1.3rem;
+  margin-right: 6px;
+}
+
+.middle-bottom {
+  width: 40%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.middle-bottom a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.middle-bottom a:hover {
+  color: rgb(0, 145, 202);
+}
+
+.right-bottom {
+  width: 195px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+
+.right-bottom a {
+  text-decoration: none;
+  color: rgba(26, 25, 25, 0.712);
+  font-size: 1rem;
+}
+
+.right-bottom a i {
+  font-size: 0.9rem;
+  margin-right: 10px;
+}
+.main-body{
+  display: flex;
+}
+.main-section{
+  margin-left: 17.5%;
+  width: 82%;
+}
+.left-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0 10px 30px;
+  width: 18%;
+  gap: 10px;
+  position: fixed;
+  top: 100px;
+  z-index: 100;
+}
+
+.left-nav a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.left-nav a img {
+  width: 25px;
+  margin-right: 8px;
+}
+.footer-up{
+  display: flex;
+  justify-content: flex-end;
+  z-index: -10;
+}
+.f-up-left{
+  width: 750px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 8px;
+  
+}
+.f-up-left-img{
+  background-image: url("/Images/swapnofooter.png");
+  width: 750px;
+  height: 250px;
+  background-repeat: repeat-y;
+  background-size:contain;
+}
+.f-up-right{
+  width: 32%;
+  margin-left: 4px;
+  margin-right: 10px;
+  height: 250px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.46);
+}
+
+.f-up-r-img{
+  width: 100%;
+  height: 120px;
+  background-image: url("/Images/swapnolocate.png");
+  background-repeat: repeat;
+  background-size: contain;
+}
+.f-up-r-table{
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.f-up-r-table p{
+  font-weight: 600;
+  font-size: 1.15rem;
+  background-color: rgba(208, 208, 208, 0.3);
+  width: 100%;
+  padding-bottom: 8px;
+  text-align: center;
+}
+.r-table{
+  width: 100%;
+  font-size: 1rem;
+}
+.tbg-e{
+  background-color: rgba(208, 208, 208, 0.3);
+}
+.r-table tr td{
+  color: rgb(223, 0, 0);
+  text-align: center;
+  width: 20%;
+}
+.r-table tr th{
+  text-align: right;
+  width: 20%;
+}
+.tm{
+  width: 5% !important;
+  text-align: center !important;
+}
+.footer-down{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.footer-main{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-top: 30px;
+  width: 100%;
+  height: 230px;
+  margin-top: 30px;
+
+  background-color: rgba(230, 236, 240, 0.659);
+}
+.fm1-img{
+  background-image: url("/Images/logo.png");
+  height: 75px;
+  width: 190px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.fmh{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0 !important;
+}
+.fm1b{
+  font-size: 0.85rem;
+}
+.fm2{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.fm2 a, .fm3 a{
+  text-decoration: none;
+  color: black;
+}
+.fm2 a:hover,.fm3 a:hover{
+  color: rgb(0, 145, 255);
+}
+.fm4-img{
+  height: 25px;
+  width: 230px;
+  background-image: url("https://d2t8nl1y0ie1km.cloudfront.net/public/payment-methods.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.social{
+  font-size: 2rem;
+}
+.youtube{
+  color: rgb(223, 0, 0);
+}
+.admin1,.admin2{
+  background-color: white;
+  width: 170px;
+  border: 2px solid rgb(223, 0, 0);
+  border-radius: 8px;
+  color: red ;
+  padding: 4px 0 4px 4px ;
+}
+.admin1 i,.admin2 i{
+  margin-right: 6px ;
+  margin-left: 10px ;
+}
+.admin1{
+  margin-top: 6px ;
+}
+.admin1:hover,.admin2:hover{
+  background-color: rgb(223, 0, 0) ;
+  color: white ;
+}
+.user{
+  color: black;
+  font-size: 1.23rem;
+}
+.user:hover{
+  color: red;
+}

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/ProductList.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/food.css" asp-append-version="true" />
 </head>
 
 <body>
@@ -69,24 +70,24 @@
     <main>
         <div class="main-body">
             <div class="left-nav">
-                <a asp-page="Privacy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/4689/4689710.png"
+                <a asp-page="Fruits" class="user"><img src="https://cdn-icons-png.flaticon.com/128/4689/4689710.png"
                         alt="">Fruits &
                     Vegetables</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3363/3363608.png" alt="">Meat
+                <a asp-page="Meat" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3363/3363608.png" alt="">Meat
                     & Fish</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/10171/10171394.png"
+                <a asp-page="Drinks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/10171/10171394.png"
                         alt="">Drinks</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2515/2515210.png"
+                <a asp-page="Snacks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2515/2515210.png"
                         alt="">Snacks</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2575/2575920.png" alt="">Candy
+                <a asp-page="Candy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2575/2575920.png" alt="">Candy
                     &
                     Chocolate</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3050/3050113.png"
+                <a asp-page="Dairy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3050/3050113.png"
                         alt="">Dairy</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3205/3205153.png"
+                <a asp-page="Sauces" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3205/3205153.png"
                         alt="">Sauces &
                     Pickles</a>
-                <a href="#" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
+                <a asp-page="Cooking" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
                         alt="">Cooking</a>
                 <a asp-page="Admin" class="admin1" asp-route-admin_auth="mojahidaltarif78@gmail.com"
                     asp-route-product="add"><i class="fa-solid fa-plus"></i> Add Product</a>
@@ -182,7 +183,6 @@
                 </div>
             </div>
         </div>
-        <hr>
         <div class="footer-down">
             <div>Copyright &copy; 2024</div>
         </div>

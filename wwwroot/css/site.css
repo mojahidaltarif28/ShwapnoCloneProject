@@ -187,6 +187,7 @@ footer{
   gap: 10px;
   position: fixed;
   top: 100px;
+  z-index: 100;
 }
 
 .left-nav a {
@@ -203,6 +204,7 @@ footer{
 .footer-up{
   display: flex;
   justify-content: flex-end;
+  z-index: -10;
 }
 .f-up-left{
   width: 750px;
@@ -276,6 +278,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .footer-main{
   display: flex;
@@ -285,6 +288,7 @@ footer{
   width: 100%;
   height: 230px;
   margin-top: 30px;
+
   background-color: rgba(230, 236, 240, 0.659);
 }
 .fm1-img{
@@ -336,6 +340,7 @@ footer{
   border-radius: 8px;
   color: red ;
   padding: 4px 0 4px 4px ;
+  display: none;
 }
 .admin1 i,.admin2 i{
   margin-right: 6px ;

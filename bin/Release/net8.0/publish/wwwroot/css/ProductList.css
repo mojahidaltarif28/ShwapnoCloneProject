@@ -1,0 +1,117 @@
+.product-list{
+    min-height: 85vh;
+}
+.product-form{
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-left: 10px;
+    margin-top: 8px;
+    margin-right: 4px;
+    padding: 25px 0 20px 0;
+    align-items: center;
+    background-color: rgb(223,0,0);
+    border-radius: 8px;
+    position: fixed;
+    top: 92px;
+    right: 9px;
+    left: 17.1vw;
+}
+.search-category-admin{
+    height: 40px;
+    width: 34vw !important;
+    margin-left: 20px;
+    outline: none !important;
+    border: 0;
+}
+.search-bar-admin{
+    width: 40vw;
+    padding: 2px 5px 2px 5px;
+    font-size: 1.4rem;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    height: 40px;
+    border: 0;
+    outline: none !important;
+}
+.admin-search-btn{
+    width: 40px !important;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-div-admin{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.product-list{
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px;
+}
+.p-btn{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+.p-btn a{
+    width: 38%;
+    height: 36px !important;
+    padding: 2px 0 10px 0px !important;
+    font-size: 1.2rem;
+    text-align: center;
+}
+.p-btn a i{
+    margin-right: 2px !important;
+}
+.product-element{
+    width: 23.5% !important;
+}
+.view-product{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 20px;
+}
+.delete-form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+.btn-list-update{
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+}
+.blu-btn{
+    width: 38% !important;
+    background-color: green !important;
+}
+.blc-btn{
+    width: 38%;
+    text-decoration: none;
+    text-align: center;
+    background-color: rgb(223,0,0) !important;
+}
+.blu-btn:hover,.blc-btn:hover{
+    opacity: 0.7 !important;
+}

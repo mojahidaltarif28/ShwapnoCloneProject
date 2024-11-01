@@ -15,9 +15,12 @@ namespace OnlineShop.Pages
 
         private readonly ILogger<Update_Product> _logger;
 
-        public Update_Product(ILogger<Update_Product> logger)
+        private readonly IConfiguration _configuration;
+
+        public Update_Product(ILogger<Update_Product> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
 
@@ -35,7 +38,7 @@ namespace OnlineShop.Pages
         [BindProperty(SupportsGet = true)]
         public int p_id { get; set; }
         [BindProperty]
-        public string tableNameH{get;set;}
+        public string tableNameH { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string product { get; set; } = "";
@@ -48,7 +51,7 @@ namespace OnlineShop.Pages
             {
                 Console.WriteLine($"{p_id} {product}");
                 string tableName = null;
-                string connectionString = "server=DESKTOP-65L1MDG\\SQLEXPRESS;database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
+                string connectionString = _configuration["ConnectionStrings:defaultConnection"];
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -90,7 +93,7 @@ namespace OnlineShop.Pages
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             string tname = tableName;
-                            tableNameH=tname;
+                            tableNameH = tname;
                             if (tname == "Candy")
                             {
                                 tname = "Candy & Chocolates";
@@ -130,9 +133,9 @@ namespace OnlineShop.Pages
         {
             try
             {
-               Console.WriteLine($"Table:{tableNameH}");
+                Console.WriteLine($"Table:{tableNameH}");
                 byte[] byteImage = null;
-                int i=0;
+                int i = 0;
                 if (productImage != null)
                 {
                     using (var memoryStream = new MemoryStream())
@@ -147,14 +150,14 @@ namespace OnlineShop.Pages
                     Console.WriteLine("No image uploaded.");
                     i++;
                 }
-                string connectionString = "server=DESKTOP-65L1MDG\\SQLEXPRESS;database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
+                string connectionString = _configuration["ConnectionStrings:defaultConnection"];
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     Console.WriteLine("Connection Successful!");
                     string sql;
-                    if(i>0)
+                    if (i > 0)
                     {
                         sql = $"update {tableNameH} set productName=@name,price=@price,unit=@unit where productId=@id";
                     }
@@ -162,16 +165,16 @@ namespace OnlineShop.Pages
                     {
                         sql = $"update {tableNameH} set productName=@name,price=@price,unit=@unit,image=@image where productId=@id";
                     }
-                    
+
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@name", ProductName);
                         command.Parameters.AddWithValue("@price", price);
                         command.Parameters.AddWithValue("@unit", unit);
-                        command.Parameters.AddWithValue("@id",p_id);
-                        if(i==0)
+                        command.Parameters.AddWithValue("@id", p_id);
+                        if (i == 0)
                         {
-                        command.Parameters.AddWithValue("@image", (object)byteImage ?? DBNull.Value);
+                            command.Parameters.AddWithValue("@image", (object)byteImage ?? DBNull.Value);
                         }
 
                         await command.ExecuteNonQueryAsync();
@@ -183,7 +186,7 @@ namespace OnlineShop.Pages
             {
                 _logger.LogInformation(e.Message);
             }
-            return RedirectToPage("/ProductList",new{admin_auth="mojahidaltarif78@gmail.com",product="list"});
+            return RedirectToPage("/ProductList", new { admin_auth = "mojahidaltarif78@gmail.com", product = "list" });
         }
     }
     public class UpdateList

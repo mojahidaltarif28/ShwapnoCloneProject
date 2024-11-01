@@ -12,10 +12,12 @@ namespace OnlineShop.Pages
     public class ProductList : PageModel
     {
         private readonly ILogger<ProductList> _logger;
+        private readonly IConfiguration _configuration;
 
-        public ProductList(ILogger<ProductList> logger)
+        public ProductList(ILogger<ProductList> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
         public List<Food> foodlist = new List<Food>();
         public string imagebase { get; set; } = "";
@@ -24,7 +26,7 @@ namespace OnlineShop.Pages
         {
             try
             {
-                string connectionString = "Server=DESKTOP-65L1MDG\\SQLEXPRESS;Database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
+                string connectionString = _configuration["ConnectionStrings:defaultConnection"];
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -39,28 +41,29 @@ namespace OnlineShop.Pages
                     + "full outer join Meat on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName)=Meat.productName "
                     + "full outer join Sauces on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName,Meat.productName)=Sauces.productName "
                     + "full outer join Snacks on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName,Meat.productName,Sauces.productName)=Snacks.productName;";
-                    using(SqlCommand command=new SqlCommand(sql,connection))
+                    using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        using(SqlDataReader reader=command.ExecuteReader())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            while(reader.Read())
+                            while (reader.Read())
                             {
-                                Food food=new Food{
-                                    id=reader.GetInt32(0),
-                                    ProductName=reader.GetString(1),
-                                    price=reader.GetString(2),
-                                    unit=reader.GetString(3),
-                                    image=reader.IsDBNull(4)?null:(byte[])reader["image"]
+                                Food food = new Food
+                                {
+                                    id = reader.GetInt32(0),
+                                    ProductName = reader.GetString(1),
+                                    price = reader.GetString(2),
+                                    unit = reader.GetString(3),
+                                    image = reader.IsDBNull(4) ? null : (byte[])reader["image"]
                                 };
                                 foodlist.Add(food);
                             }
                         }
-                    }                
+                    }
                 }
 
 
 
-               
+
 
             }
             catch (Exception e)

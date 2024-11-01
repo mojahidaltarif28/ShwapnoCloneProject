@@ -1,0 +1,45 @@
+.Food-main {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-img {
+    height: 220px;
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+.fruits-img{
+    background-image: url("/Images/fruits.png");
+}
+.meat-img{
+    background-image: url("/Images/Meat.png");
+}
+.drinks-img{
+    background-image: url("/Images/Drinks.png");
+}
+.snacks-img{
+    background-image: url("/Images/Snacks.png");
+}
+.candy-img{
+    background-image: url("/Images/Chocolate.png");
+}
+.sauces-img{
+    background-image: url("/Images/Pickles.png");
+}
+.dairy-img{
+    background-image: url("/Images/Dairy.png");
+}
+.cooking-img{
+    background-image: url("/Images/Cooking.png");
+}
+.food-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 80px;
+    justify-content: flex-start;
+    align-content: flex-start;
+    gap: 20px;
+    padding-left: 30px;
+}

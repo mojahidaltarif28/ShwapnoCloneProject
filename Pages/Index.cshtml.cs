@@ -9,10 +9,12 @@ namespace OnlineShop.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        private readonly IConfiguration _configuration;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, IConfiguration configuration)
         {
             _logger = logger;
+            _configuration = configuration;
         }
 
         public List<FoodList> FruitList { get; set; } = new List<FoodList>();
@@ -23,7 +25,7 @@ namespace OnlineShop.Pages
         {
             try
             {
-                string connectionString = "Server=DESKTOP-65L1MDG\\SQLEXPRESS;Database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
+                string connectionString = _configuration["ConnectionStrings:defaultConnection"];
 
 
                 using (SqlConnection sqlConnection = new SqlConnection(connectionString))

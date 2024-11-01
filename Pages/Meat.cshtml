@@ -1,0 +1,26 @@
+@page
+@model OnlineShop.Pages.Meat
+@{
+    ViewData["Title"] = "Meat";
+}
+
+<div class="Food-main">
+    <div class="data-img meat-img"></div>
+    <div class="food-items">
+        @foreach(var data in Model.meatlist){
+        <div class="hblp-element" id="hblp-element">
+            <div class="hblp-img" style="background-image: url('data:image/png;base64,@Convert.ToBase64String(data.image)');">
+            </div>
+            <p class="delv">Delivery 1-2 hours</p>
+            <div class="hblp-name">@data.productName</div>
+            <div class="hblp-prices">
+                <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@data.price</p>
+                <p class="hblp-unit">@data.unit</p>
+            </div>
+            <a class="check-out-btn">
+                <i class="fa-solid fa-plus"></i> Add to Bag
+            </a>
+        </div>
+}
+    </div>
+</div>

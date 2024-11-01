@@ -13,7 +13,13 @@ namespace OnlineShop.Pages
     public class Delete_Product : PageModel
     {
         private readonly ILogger<Delete_Product> _logger;
+        private readonly IConfiguration _configuration;
 
+        public Delete_Product(ILogger<Delete_Product> logger, IConfiguration configuration)
+        {
+            _logger = logger;
+            _configuration = configuration;
+        }
         [BindProperty, Required]
         public string productId { get; set; } = "";
         [BindProperty, Required]
@@ -35,7 +41,7 @@ namespace OnlineShop.Pages
                 return Page();
             }
             string tableName = null;
-            string connectionString = "Server=DESKTOP-65L1MDG\\SQLEXPRESS;database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
+            string connectionString = _configuration["ConnectionStrings:defaultConnection"];
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -68,21 +74,21 @@ namespace OnlineShop.Pages
                     {
                         tableName = result.ToString();
                     }
-                    
+
                 }
-                
+
 
                 string sql_delete = $"delete from {tableName} where productId=@productId";
                 using (SqlCommand command = new SqlCommand(sql_delete, connection))
                 {
                     command.Parameters.AddWithValue("@productId", productId);
-                    int row=command.ExecuteNonQuery();
+                    int row = command.ExecuteNonQuery();
                     Console.WriteLine($"{row} deleted from {tableName}");
 
                 }
             }
 
-            return RedirectToPage("/ProductList",new{admin_auth="mojahidaltarif78@gmail.com",product="list"});
+            return RedirectToPage("/ProductList", new { admin_auth = "mojahidaltarif78@gmail.com", product = "list" });
 
         }
     }
