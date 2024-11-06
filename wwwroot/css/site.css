@@ -288,7 +288,6 @@ footer{
   width: 100%;
   height: 230px;
   margin-top: 30px;
-
   background-color: rgba(230, 236, 240, 0.659);
 }
 .fm1-img{
@@ -340,7 +339,7 @@ footer{
   border-radius: 8px;
   color: red ;
   padding: 4px 0 4px 4px ;
-  display: none;
+  display: none ;
 }
 .admin1 i,.admin2 i{
   margin-right: 6px ;
@@ -356,7 +355,10 @@ footer{
 .user{
   color: black;
   font-size: 1.23rem;
+  display: none;
 }
+
+
 .user:hover{
   color: red;
 }

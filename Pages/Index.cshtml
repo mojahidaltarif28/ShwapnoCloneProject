@@ -26,9 +26,28 @@
                                 <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@Fruit.price</p>
                                 <p class="hblp-unit">@Fruit.unit</p>
                             </div>
-                            <a class="check-out-btn">
-                                <i class="fa-solid fa-plus"></i> Add to Bag
-                            </a>
+                            @if (!string.IsNullOrEmpty(@Request.Cookies["mobile"]))
+                {
+                    <form method="post" class="check-out-btn" asp-page="/Cart" enctype="multipart/form-data">
+                        <input type="hidden" name="productName" value="@Fruit.productName" />
+                        <input type="hidden" name="price" value="@Fruit.price" />
+                        <input type="hidden" name="unit" value="@Fruit.unit" />
+                        <input type="hidden" name="mobile" value="@Request.Cookies["mobile"]" />
+                        <input type="hidden" name="address" value="@Request.Cookies["address"]" />
+                        <input type="hidden" name="url" value="@HttpContext.Request.Path" />
+
+                        <button class="check-btn-mobile">
+                            <i class="fa-solid fa-plus"></i> Add to Bag
+                        </button>
+
+                    </form>
+                }
+                else
+                {
+                    <a class="check-out-btn">
+                        <i class="fa-solid fa-plus"></i> Add to Bag
+                    </a>
+                }
                         </div>
                     }
 
@@ -63,9 +82,28 @@
                                 <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@Food.price</p>
                                 <p class="hblp-unit">@Food.unit</p>
                             </div>
-                            <a class="check-out-btn">
-                                <i class="fa-solid fa-plus"></i> Add to Bag
-                            </a>
+                @if (!string.IsNullOrEmpty(@Request.Cookies["mobile"]))
+                                  {
+                    <form method="post" class="check-out-btn" asp-page="/Cart" enctype="multipart/form-data">
+                        <input type="hidden" name="productName" value="@Food.productName" />
+                        <input type="hidden" name="price" value="@Food.price" />
+                        <input type="hidden" name="unit" value="@Food.unit" />
+                        <input type="hidden" name="mobile" value="@Request.Cookies["mobile"]" />
+                        <input type="hidden" name="address" value="@Request.Cookies["address"]" />
+                        <input type="hidden" name="url" value="@HttpContext.Request.Path" />
+
+                        <button class="check-btn-mobile">
+                            <i class="fa-solid fa-plus"></i> Add to Bag
+                        </button>
+
+                    </form>
+                             }
+                else
+                {
+                    <a class="check-out-btn">
+                        <i class="fa-solid fa-plus"></i> Add to Bag
+                    </a>
+                }
                         </div>
                     }
 
@@ -97,9 +135,28 @@
                                     &#2547 <p class="hblp-amt"><strong style="font-size: 1.3rem;"> &#2547</strong>@Food.price</p>
                                     <p class="hblp-unit">@Food.unit</p>
                                 </div>
-                                <a class="check-out-btn">
-                                    <i class="fa-solid fa-plus"></i> Add to Bag
-                                </a>
+                 @if (!string.IsNullOrEmpty(@Request.Cookies["mobile"]))
+                {
+                    <form method="post" class="check-out-btn" asp-page="/Cart" enctype="multipart/form-data">
+                        <input type="hidden" name="productName" value="@Food.productName" />
+                        <input type="hidden" name="price" value="@Food.price" />
+                        <input type="hidden" name="unit" value="@Food.unit" />
+                        <input type="hidden" name="mobile" value="@Request.Cookies["mobile"]" />
+                        <input type="hidden" name="address" value="@Request.Cookies["address"]" />
+                        <input type="hidden" name="url" value="@HttpContext.Request.Path" />
+
+                        <button class="check-btn-mobile">
+                            <i class="fa-solid fa-plus"></i> Add to Bag
+                        </button>
+
+                    </form>
+                }
+                else
+                {
+                    <a class="check-out-btn">
+                        <i class="fa-solid fa-plus"></i> Add to Bag
+                    </a>
+                }
                             </div>
                         }
                     </div>

@@ -88,7 +88,7 @@ namespace OnlineShop.Pages
                 }
             }
 
-            return RedirectToPage("/ProductList", new { admin_auth = "mojahidaltarif78@gmail.com", product = "list" });
+            return RedirectToPage("/ProductList", new { admin_auth = "mojahidaltarif78@gmail.com", product = "list",category=tableName });
 
         }
     }

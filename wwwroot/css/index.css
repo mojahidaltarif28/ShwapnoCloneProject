@@ -130,6 +130,13 @@
     margin-top: auto;
     margin-bottom: 20px;
 }
+.check-btn-mobile{
+    color: white;
+    font-size: 1.1rem;
+    background-color: rgb(223,0,0);
+    border: 0;
+    width: 100%;
+}
 .check-out-btn i{
     margin-right: 5px;
 }

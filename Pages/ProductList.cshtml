@@ -8,8 +8,7 @@
 <div class="product-list">
     <div class="search-box-admin">
         <form class="product-form" action="">
-            <select id="category" class="item-box search-category-admin">
-                <option value="">Select Category</option>
+            <select id="category" name="category" class="item-box search-category-admin" onchange="fetchProducts()">
                 <option value="Fruits">Fruits & Vegetables</option>
                 <option value="Meat">Meat & Fish</option>
                 <option value="Drinks">Drinks</option>
@@ -20,7 +19,8 @@
                 <option value="Cooking">Cooking</option>
             </select>
             <div class="search-div-admin">
-                <input type="text" class="search-bar-admin" placeholder="Search Product">
+                <input type="text" class="search-bar-admin" name="search_item" placeholder="Search Product"
+                    id="searchItem">
                 <div class="search-btn admin-search-btn"><i class="bi bi-search"></i></div>
             </div>
         </form>
@@ -40,7 +40,9 @@
                     <p class="hblp-unit">@food.unit</p>
                 </div>
                 <div class="p-btn">
-                    <a class="btn btn-primary" href="Update_Product?p_id=@food.id&product=@System.Net.WebUtility.UrlEncode(food.ProductName)&admin_auth=mojahidaltarif78@gmail.com"> <i class="fa-solid fa-pen-to-square"></i> Edit </a>
+                    <a class="btn btn-primary"
+                        href="Update_Product?p_id=@food.id&product=@System.Net.WebUtility.UrlEncode(food.ProductName)&admin_auth=mojahidaltarif78@gmail.com">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit </a>
                     <a class="btn btn-danger" id="productDelete"> <i class="fa-solid fa-trash"></i> Delete </a>
                 </div>
             </div>
@@ -57,7 +59,7 @@
                     <div class="row ">
                         <div class="col-sm-6 d-grid">
                             <a class="btn btn-success NO-btn">NO</a>
-                            <input type="hidden" id="Namedelete" name="productName" >
+                            <input type="hidden" id="Namedelete" name="productName">
                             <input type="hidden" id="Iddelete" name="productId">
                         </div>
                         <div class="col-sm-6 d-grid">
@@ -88,5 +90,27 @@
         document.querySelector(".NO-btn").addEventListener('click', () => {
             document.querySelector('.delete-form').style.display = 'none';
         })
+    })
+    async function fetchProducts() {
+        const category = document.getElementById("category").value;
+        const searchItem = "";
+        console.log(category,searchItem);
+       window.location.href=`ProductList?admin_auth=mojahidaltarif78@gmail.com&product=list&category=${encodeURIComponent(category)}& search_item=${encodeURIComponent(searchItem)}`;
+    }
+    const url=new URLSearchParams(window.location.search);
+    const cat=url.get("category");
+    const search_item=url.get("search_item");
+    document.getElementById("category").value=cat;
+    document.getElementById("searchItem").value=search_item;
+
+  let debounceTimeout;
+    document.getElementById("searchItem").addEventListener("input",()=>{
+        clearTimeout(debounceTimeout);
+        const category = document.getElementById("category").value;
+        const search_item = event.target.value;
+        debounceTimeout = setTimeout(() => {
+                window.location.href = `ProductList?admin_auth=mojahidaltarif78@gmail.com&product=list&category=${encodeURIComponent(category)}&search_item=${encodeURIComponent(search_item)}`;
+            
+        }, 500);
     })
 </script>

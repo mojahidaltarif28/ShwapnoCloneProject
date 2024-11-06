@@ -7,20 +7,41 @@
 <div class="Food-main">
     <div class="data-img fruits-img"></div>
     <div class="food-items">
-        @foreach(var data in Model.fruitslist){
-        <div class="hblp-element" id="hblp-element">
-            <div class="hblp-img" style="background-image: url('data:image/png;base64,@Convert.ToBase64String(data.image)');">
+        @foreach (var data in Model.fruitslist)
+        {
+            <div class="hblp-element" id="hblp-element">
+                <div class="hblp-img"
+                    style="background-image: url('data:image/png;base64,@Convert.ToBase64String(data.image)');">
+                </div>
+                <p class="delv">Delivery 1-2 hours</p>
+                <div class="hblp-name">@data.productName</div>
+                <div class="hblp-prices">
+                    <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@data.price</p>
+                    <p class="hblp-unit">@data.unit</p>
+                </div>
+                @if (!string.IsNullOrEmpty(@Request.Cookies["mobile"]))
+                {
+                    <form method="post" class="check-out-btn" asp-page="/Cart" enctype="multipart/form-data">
+                        <input type="hidden" name="productName" value="@data.productName" />
+                        <input type="hidden" name="price" value="@data.price" />
+                        <input type="hidden" name="unit" value="@data.unit" />
+                        <input type="hidden" name="mobile" value="@Request.Cookies["mobile"]" />
+                        <input type="hidden" name="address" value="@Request.Cookies["address"]" />
+                        <input type="hidden" name="url" value="@HttpContext.Request.Path" />
+
+                        <button class="check-btn-mobile">
+                            <i class="fa-solid fa-plus"></i> Add to Bag
+                        </button>
+
+                    </form>
+                }
+                else
+                {
+                    <a class="check-out-btn">
+                        <i class="fa-solid fa-plus"></i> Add to Bag
+                    </a>
+                }
             </div>
-            <p class="delv">Delivery 1-2 hours</p>
-            <div class="hblp-name">@data.productName</div>
-            <div class="hblp-prices">
-                <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@data.price</p>
-                <p class="hblp-unit">@data.unit</p>
-            </div>
-            <a class="check-out-btn">
-                <i class="fa-solid fa-plus"></i> Add to Bag
-            </a>
-        </div>
-}
+        }
     </div>
 </div>

@@ -22,27 +22,25 @@ namespace OnlineShop.Pages
         public List<Food> foodlist = new List<Food>();
         public string imagebase { get; set; } = "";
 
-        public void OnGet()
+        public void OnGet(string category,string search_item)
         {
             try
             {
+                string cat_url="WHERE 1=1";
+                if(!string.IsNullOrEmpty(search_item))
+                {
+                    cat_url+=" AND productName LIKE @category";
+                }
                 string connectionString = _configuration["ConnectionStrings:defaultConnection"];
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     Console.WriteLine("Connected ProductList");
-                    string sql = "select coalesce(Candy.productId,Cooking.productId,Dairy.productId,Drinks.productId,Fruits.productId,Meat.productId,Sauces.productId,Snacks.productId) as productId, coalesce(Candy.productName,Cooking.productName,Dairy.productName,"
-                    + "Drinks.productName,Fruits.productName,Meat.productName,Sauces.productName,Snacks.productName) as productName, coalesce(Candy.price,Cooking.price,Dairy.price,Drinks.price,Fruits.price,Meat.price,Sauces.price,Snacks.price) as price,"
-                    + "coalesce(Candy.unit,Cooking.unit,Dairy.unit,Drinks.unit,Fruits.unit,Meat.unit,Sauces.unit,Snacks.unit) as unit,coalesce(Candy.image,Cooking.image,Dairy.image,Drinks.image,Fruits.image,Meat.image,Sauces.image,Snacks.image) as image from Candy "
-                    + "full outer join Cooking on Cooking.productName=Candy.productName "
-                    + "full outer join  Dairy on coalesce(Cooking.productName,Candy.productName)=Dairy.productName "
-                    + "full outer join Drinks on coalesce(Cooking.productName,Candy.productName,Dairy.productName)=Drinks.productName "
-                    + "full outer join Fruits on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName)=Fruits.productName "
-                    + "full outer join Meat on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName)=Meat.productName "
-                    + "full outer join Sauces on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName,Meat.productName)=Sauces.productName "
-                    + "full outer join Snacks on coalesce(Cooking.productName,Candy.productName,Dairy.productName,Drinks.productName,Fruits.productName,Meat.productName,Sauces.productName)=Snacks.productName;";
+                    string sql=$"SELECT * FROM {category} {cat_url}";
+                  
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
+                        command.Parameters.AddWithValue("@category",$"%{search_item}%");
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())

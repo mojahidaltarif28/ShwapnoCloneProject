@@ -1,0 +1,31 @@
+@page
+@model OnlineShop.Pages.AddNumber
+@{
+    ViewData["Title"] = "AddNumber";
+}
+<div class="add-number-format"></div>
+<div class="add-number-form" >
+    <form method="post">
+            <div class="item-category">
+                <label for="mobile">Mobile Number</label>
+                <input type="number" placeholder="Enter Mobile Number" class="add-box" id="mobile" asp-for="mobile">
+                <span asp-validation-for="mobile" class="text-danger text-sm"></span>
+            </div>
+            <div class="item-category">
+                <label for="Address">Address</label>
+                <input type="text" placeholder="Enter Address" class="add-box" id="Address" asp-for="Address">
+                <span asp-validation-for="Address" class="text-danger text-sm"></span>
+            </div>
+        <div class="row btn-box-number">
+            <div class="col-sm-6 d-grid">
+                <a href="javascript:history.back()" class="btn btn-success NO-btn">Cancel</a>
+                <input type="hidden" id="Namedelete" name="productName">
+                <input type="hidden" id="Iddelete" name="productId">
+            </div>
+            <div class="col-sm-6 d-grid">
+                <button type="submit" id="delete_btn" class="btn btn-danger">Submit</button>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -79,9 +79,10 @@
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: flex-start;
     gap: 20px;
+    padding-left: 20px;
 }
 .delete-form {
     position: fixed;

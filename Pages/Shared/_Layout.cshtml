@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - OnlineShop</title>
+    <title>@ViewData["Title"] - Shwapno</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="~/lib/fontawesome-free-6.6.0-web/css/all.min.css" />
@@ -31,7 +31,8 @@
             </div>
 
             <div class="nav-search-box">
-                <input type="text" name="search-bar" class="search-bar" id="" placeholder="Search your product">
+                <input type="text" name="search-bar" class="search-bar" id="search_item"
+                    placeholder="Search your product" value="@Context.Request.Query["search_value"]">
                 <button class="search-btn"><i class="bi bi-search"></i></button>
             </div>
 
@@ -69,31 +70,45 @@
     </header>
     <main>
         <div class="main-body">
-            <div class="left-nav">
-                <a asp-page="Fruits" class="user"><img src="https://cdn-icons-png.flaticon.com/128/4689/4689710.png"
-                        alt="">Fruits &
-                    Vegetables</a>
-                <a asp-page="Meat" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3363/3363608.png" alt="">Meat
-                    & Fish</a>
-                <a asp-page="Drinks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/10171/10171394.png"
-                        alt="">Drinks</a>
-                <a asp-page="Snacks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2515/2515210.png"
-                        alt="">Snacks</a>
-                <a asp-page="Candy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2575/2575920.png" alt="">Candy
-                    &
-                    Chocolate</a>
-                <a asp-page="Dairy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3050/3050113.png"
-                        alt="">Dairy</a>
-                <a asp-page="Sauces" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3205/3205153.png"
-                        alt="">Sauces &
-                    Pickles</a>
-                <a asp-page="Cooking" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
-                        alt="">Cooking</a>
-                <a asp-page="Admin" class="admin1" asp-route-admin_auth="mojahidaltarif78@gmail.com"
-                    asp-route-product="add"><i class="fa-solid fa-plus"></i> Add Product</a>
-                <a asp-page="ProductList" class="admin2" asp-route-admin_auth="mojahidaltarif78@gmail.com"
-                    asp-route-product="list"><i class="fa-solid fa-list"></i>Product List</a>
-            </div>
+            @{
+
+                string admin_auth = Context.Request.Query["admin_auth"];
+
+                <div class="left-nav">
+                    @if (admin_auth == null)
+                    {
+                        <a asp-page="Fruits" class="user"><img src="https://cdn-icons-png.flaticon.com/128/4689/4689710.png"
+                                alt="">Fruits &
+                            Vegetables</a>
+
+                        <a asp-page="Meat" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3363/3363608.png"
+                                alt="">Meat
+                            & Fish</a>
+                        <a asp-page="Drinks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/10171/10171394.png"
+                                alt="">Drinks</a>
+                        <a asp-page="Snacks" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2515/2515210.png"
+                                alt="">Snacks</a>
+                        <a asp-page="Candy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/2575/2575920.png"
+                                alt="">Candy
+                            &
+                            Chocolate</a>
+                        <a asp-page="Dairy" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3050/3050113.png"
+                                alt="">Dairy</a>
+                        <a asp-page="Sauces" class="user"><img src="https://cdn-icons-png.flaticon.com/128/3205/3205153.png"
+                                alt="">Sauces &
+                            Pickles</a>
+                        <a asp-page="Cooking" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
+                                alt="">Cooking</a>
+                    }
+                    else
+                    {
+                        <a asp-page="Admin" class="admin1" asp-route-admin_auth="mojahidaltarif78@gmail.com"
+                            asp-route-product="add"><i class="fa-solid fa-plus"></i> Add Product</a>
+                        <a asp-page="ProductList" class="admin2" asp-route-admin_auth="mojahidaltarif78@gmail.com"
+                            asp-route-product="list" asp-route-category="Fruits"><i class="fa-solid fa-list"></i>Product List</a>
+                    }
+                </div>
+            }
             <div class="main-section">
                 @RenderBody()
             </div>
@@ -101,88 +116,94 @@
 
     </main>
     <footer>
-        <div class="footer-up">
-            <div class="f-up-left">
-                <div class="f-up-left-img"></div>
-            </div>
-            <div class="f-up-right">
-                <div class="f-up-r-table">
-                    <p style="margin: 0;">Swapno Coverage Area</p>
-                    <table class="r-table">
-                        <tr class="tbg-o">
-                            <th scope="row">Dhaka</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>188 outlets</td>
-                            <th scope="row">Sylhet</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>6 outlets</td>
 
-                        </tr>
-                        <tr class="tbg-e">
-                            <th scope="row">Chattogram</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>15 outlets</td>
-                            <th scope="row">Khulna</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>12 outlets</td>
 
-                        </tr>
-                        <tr class="tbg-o">
-                            <th scope="row">Cumilla</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>9 outlets</td>
-                            <th scope="row">Gazipur</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>38 outlets</td>
-                        </tr>
-                        <tr class="tbg-e">
-                            <th scope="row">Manikganj</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>1 outlets</td>
-                            <th scope="row">Barishal</th>
-                            <th scope="row" class="tm">-</th>
-                            <td>10 outlets</td>
-                        </tr>
-                    </table>
+        @if (admin_auth == null)
+        {
+            <div class="footer-up">
+                <div class="f-up-left">
+                    <div class="f-up-left-img"></div>
                 </div>
-                <div class="f-up-r-img">
+                <div class="f-up-right">
+                    <div class="f-up-r-table">
+                        <p style="margin: 0;">Swapno Coverage Area</p>
+                        <table class="r-table">
+                            <tr class="tbg-o">
+                                <th scope="row">Dhaka</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>188 outlets</td>
+                                <th scope="row">Sylhet</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>6 outlets</td>
+
+                            </tr>
+                            <tr class="tbg-e">
+                                <th scope="row">Chattogram</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>15 outlets</td>
+                                <th scope="row">Khulna</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>12 outlets</td>
+
+                            </tr>
+                            <tr class="tbg-o">
+                                <th scope="row">Cumilla</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>9 outlets</td>
+                                <th scope="row">Gazipur</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>38 outlets</td>
+                            </tr>
+                            <tr class="tbg-e">
+                                <th scope="row">Manikganj</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>1 outlets</td>
+                                <th scope="row">Barishal</th>
+                                <th scope="row" class="tm">-</th>
+                                <td>10 outlets</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="f-up-r-img">
+
+                    </div>
 
                 </div>
 
             </div>
-
-        </div>
-        <div class="footer-main">
-            <div class="fm1">
-                <div class="fm1-img"></div>
-                <div class="fmh">Always Here for You</div>
-                <div class="fm1b">Call Us: 16469 (9am-9pm, Everyday)</div>
-                <div class="fm1b">Email Us: queries@acilogistics.net</div>
-            </div>
-            <div class="fm2">
-                <p class="fmh">Information</p>
-                <a href="#">Office Address</a>
-                <a href="#">Shipping & returns</a>
-                <a href="#">About us</a>
-                <a href="#">Terms & Condition</a>
-            </div>
-            <div class="fm3">
-                <p class="fmh">Information</p>
-                <a href="">Contact Us</a>
-            </div>
-            <div class="fm4">
-                <p class="fmh">My Account</p>
-            </div>
-            <div class="fm4">
-                <p class="fmh">Pay With</p>
-                <div class="fm4-img"></div>
-                <p class="fmh">Follow Us</p>
-                <div class="social">
-                    <a href="#" class="facebook"><i class="fa-brands fa-square-facebook"></i></a>
-                    <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+            <div class="footer-main">
+                <div class="fm1">
+                    <div class="fm1-img"></div>
+                    <div class="fmh">Always Here for You</div>
+                    <div class="fm1b">Call Us: 16469 (9am-9pm, Everyday)</div>
+                    <div class="fm1b">Email Us: queries@acilogistics.net</div>
+                </div>
+                <div class="fm2">
+                    <p class="fmh">Information</p>
+                    <a href="#">Office Address</a>
+                    <a href="#">Shipping & returns</a>
+                    <a href="#">About us</a>
+                    <a href="#">Terms & Condition</a>
+                </div>
+                <div class="fm3">
+                    <p class="fmh">Information</p>
+                    <a href="">Contact Us</a>
+                </div>
+                <div class="fm4">
+                    <p class="fmh">My Account</p>
+                </div>
+                <div class="fm4">
+                    <p class="fmh">Pay With</p>
+                    <div class="fm4-img"></div>
+                    <p class="fmh">Follow Us</p>
+                    <div class="social">
+                        <a href="#" class="facebook"><i class="fa-brands fa-square-facebook"></i></a>
+                        <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+
         <div class="footer-down">
             <div>Copyright &copy; 2024</div>
         </div>
@@ -196,52 +217,42 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 <script>
+    window.addEventListener("DOMContentLoaded", function () {
+        const urls = new URLSearchParams(window.location.search);
+        const admin_auth = urls.get('admin_auth');
+        const product = urls.get('product');
+        console.log(product);
 
-    const urls = new URLSearchParams(window.location.search);
-    const admin_auth = urls.get('admin_auth');
-    const product = urls.get('product');
+        if (admin_auth != null) {
 
+            if (product==null||product === "add") {
+                document.querySelector('.admin1').style.backgroundColor = 'red';
+                document.querySelector('.admin1').style.color = 'white';
+            } else {
+                document.querySelector('.admin2').style.backgroundColor = 'red';
+                document.querySelector('.admin2').style.color = 'white';
+            }
 
-    if (admin_auth != null) {
-        document.querySelectorAll(".user").forEach((element) => {
+            document.querySelector(".search-bar").readOnly = true;
+            document.querySelector(".search-btn").disabled = true;
 
-            element.style.display = 'none';
-        });
-        document.querySelectorAll(".footer-up, .footer-main").forEach(element => {
-            element.style.display = 'none';
-        });
-        document.querySelectorAll(".admin1,.admin2").forEach(element => {
-            element.style.display = 'block';
-        });
-
-         if (product==null||product == "add") {
-            document.querySelector('.admin1').style.backgroundColor = 'red';
-            document.querySelector('.admin1').style.color = 'white';
+        } else {
+            document.querySelector(".search-bar").readOnly = false;
+            document.querySelector(".search-btn").disabled = false;
         }
-        else {
-            document.querySelector('.admin2').style.backgroundColor = 'red';
-            document.querySelector('.admin2').style.color = 'white';
-        }
-        document.querySelector(".search-bar").readOnly = true;
-        document.querySelector(".search-btn").disabled = true;
+    });
+    let dt;
+    document.querySelector("#search_item").addEventListener('input', () => {
+        clearTimeout(dt);
 
-    }
-    else {
-         console.log(admin_auth);
-        document.querySelectorAll(".user").forEach((element) => {
-
-            element.style.display = 'block';
-        });
-        document.querySelectorAll(".admin1, .admin2").forEach(element => {
-            element.style.display = 'none';
-        });
-        document.querySelector(".search-bar").readOnly = false;
-        document.querySelector(".search-btn").disabled = false;
-        product="add";
-    }
-    console.log(product);
-
-
+        const search_item = event.target.value;
+        dt = setTimeout(() => {
+            if (search_item) {
+                window.location.href = `Search?search_value=${encodeURIComponent(search_item)}`;
+            }
+        }, 1500);
+    });
 </script>
+
 
 </html>

@@ -1,0 +1,30 @@
+@page
+@model OnlineShop.Pages.Search
+@{
+    ViewData["Title"] = "Search";
+}
+
+<div class="search-list">
+    @if(Model.searchProduct.Any())
+    {
+    @foreach(var item in Model.searchProduct)
+    {
+    <div class="hblp-element" id="hblp-element">
+        <div class="hblp-img"
+            style="background-image: url('data:image/png;base64,@Convert.ToBase64String(item.image)');">
+        </div>
+        <p class="delv">Delivery 1-2 hours</p>
+        <div class="hblp-name">@item.ProductName</div>
+        <div class="hblp-prices">
+            <p class="hblp-amt"> <strong style="font-size: 1.3rem;"> &#2547</strong>@item.price</p>
+            <p class="hblp-unit">@item.unit</p>
+        </div>
+        <a class="check-out-btn">
+            <i class="fa-solid fa-plus"></i> Add to Bag
+        </a>
+    </div>
+    }
+    }else{
+        <div class="no-product"><P>No Product Found</P></div>
+    }
+</div>

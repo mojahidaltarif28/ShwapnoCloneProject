@@ -340,6 +340,7 @@ footer{
   border-radius: 8px;
   color: red ;
   padding: 4px 0 4px 4px ;
+  display: none ;
 }
 .admin1 i,.admin2 i{
   margin-right: 6px ;
@@ -355,7 +356,12 @@ footer{
 .user{
   color: black;
   font-size: 1.23rem;
+  display: none;
 }
+.user, .footer-up, .footer-main, .admin1, .admin2 {
+  display: none;
+}
+
 .user:hover{
   color: red;
 }
