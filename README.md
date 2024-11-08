@@ -2,6 +2,8 @@
 
 An **online shopping platform** built using **ASP.NET** and **MSSQL Server**, replicating the core functionalities of the popular store **Shwapno**. This platform provides users with a seamless shopping experience, including essential features like product management, search, and cart functionality.
 
+## Live
+- [Go To Live](http://shwapno.somee.com/)
 ## Features
 
 - **Product Management**: Add, update, delete, and search for products.
@@ -27,4 +29,4 @@ An **online shopping platform** built using **ASP.NET** and **MSSQL Server**, re
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/mojahidaltarif28/ShwapnoCloneProject.git
-   cd Shwapno-Online-Store-Clone
+   
