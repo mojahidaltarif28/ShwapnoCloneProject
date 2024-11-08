@@ -16,6 +16,7 @@
 </head>
 
 <body>
+@inject CartService CartService
     <header>
         <div class="main-nav">
             <div class="nav-element">
@@ -49,7 +50,7 @@
             </div>
             <div class="nav-element">
                 <div class="sign-up">
-                    <a asp-page="Admin" asp-route-admin_auth="mojahidaltarif78@gmail.com"><i
+                    <a asp-page="Login" asp-route-cart_mode="cart_mode" ><i
                             class="bi bi-person-fill"></i>Sign in / Sign up</a>
                 </div>
             </div>
@@ -67,9 +68,13 @@
                 <a href="#"><i class="fa-solid fa-shop"></i>Our outlet</a>
                 <a href="#"><i class="fa-regular fa-circle-question"></i>Help line</a>
             </div>
+        </div>
+       
+
     </header>
     <main>
         <div class="main-body">
+            
             @{
 
                 string admin_auth = Context.Request.Query["admin_auth"];
@@ -99,18 +104,28 @@
                             Pickles</a>
                         <a asp-page="Cooking" class="user"><img src="https://cdn-icons-png.flaticon.com/128/1261/1261052.png"
                                 alt="">Cooking</a>
+                                if(Context.Request.Query["cart_mode"].ToString()!="cart_mode"){
+                        <a asp-page="CartBackend" asp-route-mobile="@Context.Request.Cookies["mobile"]" asp-route-cart_mode="cart_mode" class="cart-box">
+                            @{ CartService.SetCartCount();
+                            <div class="cart-count">@CartService.CartCount</div>
+                            }
+                            <div class="cart-icon"><i style="height: 40px; width: 40px;" class="fa-solid fa-cart-shopping"></i></div>
+                        </a>
+                        }
+
                     }
                     else
                     {
                         <a asp-page="Admin" class="admin1" asp-route-admin_auth="mojahidaltarif78@gmail.com"
                             asp-route-product="add"><i class="fa-solid fa-plus"></i> Add Product</a>
                         <a asp-page="ProductList" class="admin2" asp-route-admin_auth="mojahidaltarif78@gmail.com"
-                            asp-route-product="list" asp-route-category="Fruits"><i class="fa-solid fa-list"></i>Product List</a>
+                            asp-route-product="list" asp-route-category="Fruits"><i class="fa-solid fa-list"></i>Product
+                            List</a>
                     }
                 </div>
             }
-            <div class="main-section">
-                @RenderBody()
+            <div class="main-section">     
+                        @RenderBody()  
             </div>
         </div>
 
@@ -225,7 +240,7 @@
 
         if (admin_auth != null) {
 
-            if (product==null||product === "add") {
+            if (product == null || product === "add") {
                 document.querySelector('.admin1').style.backgroundColor = 'red';
                 document.querySelector('.admin1').style.color = 'white';
             } else {
@@ -252,6 +267,7 @@
             }
         }, 1500);
     });
+
 </script>
 
 

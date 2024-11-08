@@ -1,0 +1,45 @@
+@page
+@model OnlineShop.Pages.CartBackend
+@{
+    ViewData["Title"] = "Cart";
+    
+}
+
+
+<div class="cart-main">
+    <div class="cart-items">
+        <div class="cart-header">Cart items</div>
+        <div class="cart-main-section">
+            <table>
+                @foreach (var data in Model.cartItems)
+                {
+                    <tr>
+                        <div class="row-cart">
+                            <div class="delete-row">
+                                <form  method="post" style="display:inline;" >
+                                     <input type="number" value="@data.id" style="display: none;" asp-for="id_delete">
+                                    <button class="delete-cart-btn"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                            <div class="main-row">
+                                <div class="productName-row">@data.productName</div>
+                                <div class="unit-row">@data.unit @TempData["CartCount"]</div>
+                            </div>
+                            <div class="price-row"><strong style="font-size: 1.7rem;"> &#2547</strong>@data.price</div>
+                        </div>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <div class="total-label">Total: </div>
+                <input type="text" value="@Model.total_cart" readonly class="total-cart-amt">
+            </div>
+            <a href="#" class="cart-btn">
+                Place Order
+            </a>
+        </div>
+    </div>
+
+</div>

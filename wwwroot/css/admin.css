@@ -112,3 +112,71 @@
     overflow-y: auto;
     min-height: 35px;
 }
+
+
+.login-form form{
+    width: 30vw !important;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 70vh;
+}
+.login-input{
+    width: 100% ;
+    height: 40px;
+    font-size: 1.2rem;
+    padding-left: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(128, 128, 128, 0.645);
+    outline: 0;
+
+}
+.login-input:focus{
+    outline: 2px solid rgba(128, 128, 128, 0.645);
+}
+.text-log{
+    margin-left: 5px;
+    display: inline;
+}
+.login-category{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+    height: 90px;
+}
+.signin-btn{
+    width: 100%;
+    background-color: rgb(223, 0, 0);
+    border: 0;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px 0 8px 0;
+    margin-top: 30px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.signin-btn:hover{
+    opacity: 0.8;
+}
+.no-ac{
+    display: flex;
+    width: 100%;
+    justify-content: center ;
+    align-items: center !important;
+    padding-top: 10px;
+    gap: 5px;
+}
+.no{
+   color: #FF8814 !important;
+   width: fit-content !important;
+   text-decoration: none;
+}
+.up{
+    text-decoration: none;
+    color: rgb(223, 0, 0);
+}
+.up:hover{
+    color: rgb(0, 136, 255);
+}

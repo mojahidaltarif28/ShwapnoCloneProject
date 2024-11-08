@@ -1,4 +1,12 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+document.querySelectorAll(".check-out-btn").forEach(button => {
+    button.addEventListener("click", () => {
 
-// Write your JavaScript code.
+        const container = button.closest(".hblp-element");
+        const productName = container.querySelector(".hblp-name").innerText;
+        const price = container.querySelector(".hblp-amt").innerText;
+        const unit = container.querySelector(".hblp-unit").innerText;
+       
+            window.location.href = `AddNumber?productName=${encodeURIComponent(productName)}&price=${encodeURIComponent(price)}&unit=${encodeURIComponent(unit)}&url=${encodeURIComponent(window.location.pathname)}`;
+    });
+});

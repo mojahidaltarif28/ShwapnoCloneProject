@@ -49,13 +49,13 @@ namespace OnlineShop.Pages
                     {
                         await productImage.CopyToAsync(memoryStream);
                         byteImage = memoryStream.ToArray();
-                         Console.WriteLine($"Image Byte Array Length: {byteImage.Length}");
+                        Console.WriteLine($"Image Byte Array Length: {byteImage.Length}");
                     }
                 }
                 else
-        {
-            Console.WriteLine("No image uploaded.");
-        }
+                {
+                    Console.WriteLine("No image uploaded.");
+                }
                 string connectionString = "server=DESKTOP-65L1MDG\\SQLEXPRESS;database=Shwapno;Trusted_Connection=True;TrustServerCertificate=True";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
@@ -69,7 +69,7 @@ namespace OnlineShop.Pages
                         command.Parameters.AddWithValue("@price", price);
                         command.Parameters.AddWithValue("@unit", unit);
                         command.Parameters.AddWithValue("@image", (object)byteImage ?? DBNull.Value);
-                       
+
                         await command.ExecuteNonQueryAsync();
                     }
                 }
@@ -79,7 +79,7 @@ namespace OnlineShop.Pages
                 ErrorMessage = ex.Message;
                 return Page();
             }
-            return RedirectToPage("/Admin",new{admin_auth="mojahidaltarif78@gmail.com",product="add"});
+            return RedirectToPage("/Admin", new { admin_auth = "mojahidaltarif78@gmail.com", product = "add" });
         }
     }
 }

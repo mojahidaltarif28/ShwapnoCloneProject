@@ -1,0 +1,31 @@
+@page
+@model OnlineShop.Pages.Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="Admin-main">
+    <div class="Add-Item login-form">
+        <form action="" method="post" enctype="multipart/form-data">
+            <p>Sign In</p>
+           
+            <div class="login-category">
+                <label for="email">Email </label>
+                <input type="text" name="email" id="email" class="login-input" placeholder="Enter email" value="mojahidaltarif78@gmail.com"  asp-for="email"/>
+                <span asp-validation-for="email" class="text-danger text-log"></span>
+            </div>
+            <div class="login-category">
+                <label for="password">Password </label>
+                <input type="password" name="password" value="mojahidaltarif" id="password" class="login-input" placeholder="Enter password"  asp-for="password"/>
+                <span asp-validation-for="password" class="text-danger text-log"></span>
+            </div>
+            <button class="signin-btn" id="signinbtn">Sign In</button>
+           
+                <div class="no-ac">
+                    <a class="no">No Account?</a>
+                    <a href="#" class="up">Sign Up</a>
+            </div>
+        </form>
+    </div>
+</div>
+

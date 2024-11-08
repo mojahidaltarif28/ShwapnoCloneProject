@@ -1,4 +1,6 @@
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton<IHttpContextAccessor,HttpContextAccessor>();
+builder.Services.AddScoped<CartService>();
 
 builder.Services.AddRazorPages();
 

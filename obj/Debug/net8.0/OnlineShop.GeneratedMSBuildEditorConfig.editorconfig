@@ -34,6 +34,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Windows 10/Desktop/OnlineShop/Pages/CartBackend.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydEJhY2tlbmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Windows 10/Desktop/OnlineShop/Pages/Cooking.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29va2luZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Windows 10/Desktop/OnlineShop/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Windows 10/Desktop/OnlineShop/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Windows 10/Desktop/OnlineShop/Pages/Meat.cshtml]
