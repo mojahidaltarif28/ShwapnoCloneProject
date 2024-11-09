@@ -14,7 +14,7 @@ An **online shopping platform** built using **ASP.NET** and **MSSQL Server**, re
 ## Tech Stack
 
 - **Frontend**: ASP.NET Razor Pages
-- **Backend**: ASP.NET
+- **Backend**: C#
 - **Database**: MSSQL Server
 
 ## Getting Started
