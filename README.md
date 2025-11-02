@@ -29,4 +29,6 @@ An **online shopping platform** built using **ASP.NET** and **MSSQL Server**, re
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/mojahidaltarif28/ShwapnoCloneProject.git
+2. **Database Backup (.bak)**
+   [Download database](https://drive.google.com/drive/folders/1Qq5dlZ0OtxZpLCUYLGY_NQr68H6vZ4OZ)
    
