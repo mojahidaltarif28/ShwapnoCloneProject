@@ -30,5 +30,6 @@ An **online shopping platform** built using **ASP.NET** and **MSSQL Server**, re
    ```bash
    git clone https://github.com/mojahidaltarif28/ShwapnoCloneProject.git
 2. **Database Backup (.bak)**
-   [Download database](https://drive.google.com/drive/folders/1Qq5dlZ0OtxZpLCUYLGY_NQr68H6vZ4OZ)
+   
+   [Download database]([https://drive.google.com/drive/folders/1Qq5dlZ0OtxZpLCUYLGY_NQr68H6vZ4OZ](https://drive.google.com/file/d/1e3fyWFlcruyCMT8-fC_dCP6zcGi1fFbu/view?usp=sharing)
    
